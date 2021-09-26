@@ -1,25 +1,28 @@
-import logo from './logo.svg';
+// your-app-name/src/App.js
+import { useState } from 'react';
+
+import { repositoryInfo, repositoryList } from './utils/queries';
+import Fetch from './fetch';
 import './App.css';
 
 function App() {
+
+  let [type, setType] = useState('normal');
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <div className="App">
+        <input type="radio" name="type" 
+          onChange={() => setType('normal')} checked={ type === 'normal' }/> Normal Fetch
+        <input type="radio" name="type" 
+          onChange={() => setType('relay')}  checked={ type === 'relay' }/> Relay Fetch
+      </div>
+      <div className="App">
+        { type === 'normal' && <Fetch query={repositoryList}/>}
+      </div>
     </div>
   );
+
 }
 
 export default App;
