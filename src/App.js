@@ -3,6 +3,7 @@ import { useState } from 'react';
 
 import { repositoryInfo, repositoryList } from './utils/queries';
 import Fetch from './fetch';
+import Relay from './relay';
 import './App.css';
 
 function App() {
@@ -18,7 +19,8 @@ function App() {
           onChange={() => setType('relay')}  checked={ type === 'relay' }/> Relay Fetch
       </div>
       <div className="App">
-        { type === 'normal' && <Fetch query={repositoryList}/>}
+        { type === 'normal' && <Fetch query={repositoryInfo}/> }
+        { type === 'relay' && <Relay query={repositoryInfo}/> }
       </div>
     </div>
   );
