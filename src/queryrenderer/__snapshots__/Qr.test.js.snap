@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Data Render 1`] = `
+<p>
+  hh
+</p>
+`;
+
+exports[`ItineraryCard 1`] = `
+<p>
+  hh
+</p>
+`;

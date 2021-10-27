@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import ReactJson from 'react-json-view';
 
 import fetchGraphQL from '../utils/fetchGraphQL';
